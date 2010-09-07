@@ -2,12 +2,10 @@
 namespace Nov\CouchDb\Fs\Monkeypatch;
 
 use Nov\CouchDb\Fs;
-
 use Nov\CouchDb;
 
 function unlink($filename)
 {
-    echo "111";
     $fs = CouchDb\Fs::factory(FSCDB);
     $fs->delete($filename);
 }
@@ -35,7 +33,6 @@ function fopen($filename, $type='r')
 }
 function filesize($filename)
 {
-    $out = null;
     $fs = CouchDb\Fs::factory(FSCDB);
     $res = $fs->open($filename);
     return $res->getLenght();

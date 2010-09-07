@@ -11,7 +11,7 @@ abstract class AbstractObject
     {
         $this->_class    = $class;
         $this->_instance = $instance;
-        $triggerClassName = $this->_class . "\Triggers";
+        $triggerClassName = $this->_class . "\\Triggers";
         
         $classFile = str_replace('\\', '/', $triggerClassName).'.php';
         if (is_file(NovBASEPATH. '/'.$classFile) && class_exists($triggerClassName)) {

@@ -274,11 +274,11 @@ EOD;
                 if ($conf['recordOutput']) {
                     $returnType = "Orm_{$schema}_sp";
                     $fReturn = "\$this";
-                    $defaultFetchMode = "Nov\Db::FETCH_ALL";
+                    $defaultFetchMode = "Nov\\Db::FETCH_ALL";
                 } else {
                     $returnType = $conf['outputType'];
                     $fReturn = "\$this->exec()";
-                    $defaultFetchMode = "Nov\Db::FETCH_ONE";
+                    $defaultFetchMode = "Nov\\Db::FETCH_ONE";
                 }
                 $_fctsBody[] = <<<EOD
     /**

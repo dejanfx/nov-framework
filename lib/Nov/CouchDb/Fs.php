@@ -10,9 +10,10 @@ class Fs
      * @param string $db 
      * @return \Nov\CouchDb\Fs
      */
+    
     static function factory($cdbId, $db=null)
     {
-        $db = !is_null($db) ?: self::$_db;
+        $db = is_null($db) ? self::$_db : $db;
         return new self(Nov\CouchDb::factory($cdbId)->db($db)); 
     }
     

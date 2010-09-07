@@ -1,23 +1,20 @@
 <?php
 echo "<pre>";
 require_once("Nov/Loader.php");
-\Nov\Loader::init();
+Nov\Loader::init();
 
-use \Nov\CouchDb;
+use Nov\CouchDb;
 
-/*
-$cdb = new Nov\CouchDb('localhost', 5984);
-$nombre = $cdb->db('ris_users')->select('gonzalo')->asObject()->name;
-$apellido = $cdb->db('ris_users')->select('gonzalo')->asObject()->surname;
+$cdb = new CouchDb('localhost', 5984);
+$cdb->db('users');
+$nombre = $cdb->db('users')->select('gonzalo')->asObject()->name;
+$apellido = $cdb->db('users')->select('gonzalo')->asObject()->surname;
 
 echo "Hola {$nombre} {$apellido}.<p/>";
 
-*/
-
-
 //echo "Apellido = ". $gonzaloCdb->select('gonzalo')->asObject()->name . "<p/>";
 
-$cdb =  CouchDb::factory(NovConf::CDB1)->db('ris_users');
+$cdb = CouchDb::factory(NovConf::CDB1)->db('ris_users');
 
 
 

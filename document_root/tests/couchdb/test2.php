@@ -1,8 +1,8 @@
 <?php
-use \Nov\CouchDb\Fs;
-use \Nov\CouchDb\Fs\Exception;
+use Nov\CouchDb\Fs;
+use Nov\CouchDb\Fs\Exception;
 require_once ("Nov/Loader.php");
-\Nov\Loader::init();
+Nov\Loader::init();
 
 echo "<pre>";
 $fs = Fs::factory(NovConf::CDB1);

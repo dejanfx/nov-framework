@@ -1,11 +1,11 @@
 <?php
 // http://Nov2/tests/orm/test.php
-use Nov\Db\Orm\Instance;
-error_reporting(-1);
 
+error_reporting(-1);
 require_once("Nov/Loader.php");
 Nov\Loader::init();
 
+use Nov\Db\Orm\Instance;
 use Orm\test;
 echo "<pre>";
 $db = Nov\Db::factory(NovConf::PG1);
