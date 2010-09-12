@@ -71,20 +71,50 @@ class StreamWrapper {
         $_path = $_url['path'];
         $fs = self::_getFs($path, $_url)->open($_path);
         
-        //tamaño en bytes
         $size = $fs->getLenght();
+        // tamaño en bytes
         $out[7] = $size;
         $out['size'] = $size;
-
-        //momento del último acceso (tiempo Unix)
-        $out[8] = null;
-        $out['atime'] = null;
-        //momento del último acceso (tiempo Unix)
-        $out[9] = null;
-        $out['mtime'] = null;
-        //momento de la última modificación del i-nodo (tiempo Unix)
-        $out[10] = null;
-        $out['ctime'] = null;
+        
+        // número de dispositivo
+        $out[0] = 0;   
+        $out['dev'] = 0; 
+        // número de i-nodo *
+        $out[1] = 0;   
+        $out['ino'] = 0; 
+        // modo de protección del i-nodo
+        $out[2] = 0100666;   
+        $out['mode'] = 0100666;    
+        // número de enlaces
+        $out[3] = 0;   
+        $out['nlink'] = 0;
+        // ID de usuario del propietario
+        $out[4] = 0;   
+        $out['uid'] = 0; 
+        // ID de grupo del propietario *
+        $out[5] = 0;   
+        $out['gid'] = 0;
+        // tipo de dispositivo, si es un dispositivo i-nodo
+        $out[6] = 0;   
+        $out['rdev'] = 0;    
+        // tamaño en bytes
+        $out[7] = 0;   
+        $out['size'] = 0;   
+        // momento del último acceso (tiempo Unix)
+        $out[8] = 0;   
+        $out['atime'] = 0;  
+        // momento de la última modificación (tiempo Unix)
+        $out[9] = 0;   
+        $out['mtime'] = 0;  
+        // momento de la última modificación del i-nodo (tiempo Unix) 
+        $out[10] = 0;  
+        $out['ctime'] = 0;  
+        // momento de la última modificación del i-nodo (tiempo Unix)
+        $out[11] = 0;  
+        $out['blksize'] = 0; 
+        // número de bloques de 512 bytes asignados
+        $out[12] = 0;  
+        $out['blocks'] = 0;
         
         return $out;
     } 

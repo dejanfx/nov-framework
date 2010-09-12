@@ -253,7 +253,7 @@ class Http
            curl_setopt($s, CURLOPT_USERPWD, $this->_user.':'.$this->_pass);
         }
 
-           curl_setopt($s, CURLOPT_HTTPHEADER, $this->_buildHeadersForCurl($headers));
+        curl_setopt($s, CURLOPT_HTTPHEADER, $this->_buildHeadersForCurl($headers));
         switch ($type) {
             case self::DELETE:
                 curl_setopt($s, CURLOPT_URL, $url . '?' . http_build_query($params));

@@ -168,6 +168,7 @@ class CouchDb
     {
         $key = urlencode($key);
         $file = urlencode($file);
+        $a = "/{$this->_db}/{$key}/{$file}";
         try {
             $out = Http::connect($this->_host, $this->_port, $this->_protocol)
                 ->setCredentials($this->_user, $this->_password)

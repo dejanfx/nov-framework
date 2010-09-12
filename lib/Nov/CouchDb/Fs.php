@@ -43,12 +43,12 @@ class Fs
     {
         if ($create) {
             try {
-                $this->_cdb->insert($path, array('path' => dirname($path)));
+                $this->_cdb->insert($path, array('dirname' => dirname($path),'last' => date('c')));
             } catch (\Exception $e) {
                 if ($silentMode === false) {
                     throw new Fs\Exception\FileExists('File Exits');
                 }
-            }        
+            }
         }
         try {
             $out = $this->_cdb->select($path)->asObject();
@@ -67,6 +67,7 @@ class Fs
                 foreach ($attachs as $name => $info) {}
                 return Fs\Resource::factory($this->_cdb, $path, $name, $info);
             }
+        
         }
     }
     

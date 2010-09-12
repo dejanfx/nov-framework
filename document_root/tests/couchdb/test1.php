@@ -14,7 +14,7 @@ echo "Hola {$nombre} {$apellido}.<p/>";
 
 //echo "Apellido = ". $gonzaloCdb->select('gonzalo')->asObject()->name . "<p/>";
 
-$cdb = CouchDb::factory(NovConf::CDB1)->db('ris_users');
+$cdb = CouchDb::factory(NovConf::CDB1)->db('users');
 
 
 

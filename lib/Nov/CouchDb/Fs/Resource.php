@@ -91,10 +91,12 @@ class Resource
         return $this->_cdb->delete($this->_path);
     }
     
-    public function write($raw, $contentType=null)
+    public function write($raw, $contentType=null, $stat = array())
     {
         $this->_cdb->addAttach($this->_path, basename($this->_path), $raw, $contentType);
-        
+        if (count($stat) > 0) {
+        	$this->_cdb->update($this->_path, $stat);
+        }
         return $this->_cdb->select($this->_path);
     }
     
